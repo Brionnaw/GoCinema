@@ -5,7 +5,16 @@ import logger = require('morgan');
 import cookieParser = require('cookie-parser');
 import bodyParser = require('body-parser');
 const app = express();
+let mongoose = require('mongoose')
 
+// Datebase connection
+mongoose.connect('mongodb://localhost/goCinema');
+
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => {
+console.log('success database connection')
+  });
 // view engine setup
 app.set('views', './views');
 app.engine('html', require('ejs').renderFile);
