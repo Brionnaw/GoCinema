@@ -1,35 +1,36 @@
-// // import modules
-// import express = require ('express');
-// let router = express.Router();
-// let mongoose = require('mongoose');
-// let request = require('request');
-//
-// //MODEL
-// let Movie = mongoose.model('Movie', {
-//   Movie:{
-//     Genre:String,
-//   },
-// });
-//
-// //save Recipe
-// router.post('/recipe', function(req, res) {
-//   let newRecipe = new Recipe ({
-//       recipe:req.body.recipe
-//   })
-//   request('http://food2fork.com/api/search?key=75cf831690ffc9d6e14a46dd5b3c8c13&q='+req.body.recipe,
-//     function (error, response, body) {
-//       console.log(body)
-//       let type = JSON.parse(body)
-//       if (type.name === req.body.type) {
-//         res.send(type);
-//       } else {
-//         console.log(error)
-//         res.send({message:'recipe not found'})
-//       }
-//     })
-//   });
-//
-//
-//
-// // EXPORT ROUTER
-// export = router;
+// import modules
+import express = require ('express');
+let router = express.Router();
+let mongoose = require('mongoose');
+let request = require('request');
+
+//model
+let Movie = mongoose.model('Movie', {
+  Movie:{
+    zipCode:String,
+    date:Date,
+  },
+});
+//Gracenote api
+router.post('/movie', function(req, res) {
+  let newMovie = new Movie ({
+      zipCode:req.body.zipCode,
+      date:req.body.date
+  })
+  request('http://data.tmsapi.com/v1.1/movies/showings?startDate='+req.body.date+'&numDays=2&zip='+req.body.zipCode+'&units=mi&imageSize=Md&imageText=false&api_key=fr63fvhma63cuws5jkzy22eh',
+      function (error, response, body) {
+        console.log(body)
+      console.log(body)
+      let movie = JSON.parse(body)
+      if (movie.name === req.body.movie) {
+        res.send(movie);
+      } else {
+        console.log(error)
+        res.send({message:'movie not found'})
+      }
+    }
+  )
+  });
+
+// export router
+export = router;

@@ -8,7 +8,7 @@ const app = express();
 let mongoose = require('mongoose')
 
 // Datebase connection
-mongoose.connect('mongodb://localhost/goCinema');
+mongoose.connect('mongodb://localhost/gocinema');
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -29,6 +29,8 @@ app.use(cookieParser());
 
 app.use(express.static('./ngApp'));
 app.use('/scripts', express.static('bower_components'));
+app.use('/api', require('./api/movie'));
+
 
 app.get('/*', function(req, res, next) {
   if (/.js|.html|.css|templates|js|scripts/.test(req.path) || req.xhr) {
@@ -44,16 +46,16 @@ app.use(function(req, res, next) {
   err['status'] = 404;
   next(err);
 });
-
-// error handlers
-app.use(function(err: any, req, res, next) {
-  res.status(err.status || 500);
-  // Don't leak stack trace if not in development
-  let error = (app.get('env') === 'development') ? err : {};
-  res.send({
-    message: err.message,
-    error: error
-  });
-});
+//
+// // error handlers
+// app.use(function(err: any, req, res, next) {
+//   res.status(err.status || 500);
+//   // Don't leak stack trace if not in development
+//   let error = (app.get('env') === 'development') ? err : {};
+//   res.send({
+//     message: err.message,
+//     error: error
+//   });
+// });
 
 export = app;

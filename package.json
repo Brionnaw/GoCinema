@@ -1,7 +1,7 @@
 {
-  "name": "coder-camps-js",
+  "name": "gocinema",
   "version": "0.0.0",
-  "description": "A MEAN stack application.",
+  "description": "movie application",
   "scripts": {
     "start": "node ./bin/www",
     "devStart": "nodemon ./bin/www"
@@ -13,7 +13,9 @@
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.14.0",
+    "mongoose": "^4.7.3",
     "morgan": "^1.7.0",
+    "request": "^2.79.0",
     "serve-favicon": "^2.3.0"
   }
 }
