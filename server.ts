@@ -46,8 +46,8 @@ app.use(function(req, res, next) {
   err['status'] = 404;
   next(err);
 });
-//
-// // error handlers
+
+// error handlers
 // app.use(function(err: any, req, res, next) {
 //   res.status(err.status || 500);
 //   // Don't leak stack trace if not in development

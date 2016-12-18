@@ -1,16 +1,15 @@
+
+<!-- search-->
 <p class="text-center">
   <input
   type="text"
-  placeholder="Enter zip code"
-  ng-model="vm.zipCode">
-  <input
-  type="text"
-  placeholder="Enter Date (2016-12-17)"
-  ng-model="vm.date">
+  placeholder="Enter movie"
+  ng-model="vm.movie">
   <button
   type="button"
   name="button"
   class="btn btn-sm"
   style="background-color:purple; color:white;"
-  ng-click="vm.search()">search
+  ng-click="vm.search()">Find
 </button></p>
+{{vm.movieData.body}}

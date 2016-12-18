@@ -7,30 +7,30 @@ let request = require('request');
 //model
 let Movie = mongoose.model('Movie', {
   Movie:{
-    zipCode:String,
-    date:Date,
+    movie:String,
   },
 });
 //Gracenote api
 router.post('/movie', function(req, res) {
   let newMovie = new Movie ({
-      zipCode:req.body.zipCode,
-      date:req.body.date
+      movie:req.body.movie,
   })
-  request('http://data.tmsapi.com/v1.1/movies/showings?startDate='+req.body.date+'&numDays=2&zip='+req.body.zipCode+'&units=mi&imageSize=Md&imageText=false&api_key=fr63fvhma63cuws5jkzy22eh',
+  request('https://api.themoviedb.org/3/search/movie?api_key=27d9edaf269ac51be79e2c8fc19e5c99&callback=test&append_to_response=videos,images&query='+req.body.movie,
       function (error, response, body) {
-        console.log(body)
-      console.log(body)
-      let movie = JSON.parse(body)
-      if (movie.name === req.body.movie) {
-        res.send(movie);
-      } else {
-        console.log(error)
-        res.send({message:'movie not found'})
-      }
+        if (!error && response.statusCode == 200)
+         {
+          res.send(response)
+        } else {
+          console.log(error)
+          res.send({message:'not found'})
+        }
     }
   )
   });
+
+// api for local movie threatres:
+// http://data.tmsapi.com/v1.1/movies/showings?startDate='+req.body.date+'&numDays=2&zip='+req.body.zipCode+'&units=mi&imageSize=Md&imageText=false&api_key=fr63fvhma63cuws5jkzy22eh'
+
 
 // export router
 export = router;

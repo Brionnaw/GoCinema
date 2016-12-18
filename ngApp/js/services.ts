@@ -1,7 +1,7 @@
 namespace app.Services {
  export class MovieService {
    public MovieResource;
-   public getZipCode(getInfo) {
+   public getmovie(getInfo) {
      console.log(getInfo)
      return this.MovieResource.save(getInfo).$promise
    }

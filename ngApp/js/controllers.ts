@@ -1,16 +1,21 @@
 namespace app.Controllers {
   export class HomeController {
-    public zipCode;
-    public date;
+    public movie;
+    public movieData;
     public search(){
       let info = {
-        zipCode:this.zipCode,
-        date:this.date
+        movie:this.movie,
       }
       console.log(info)
-      this.movieService.getZipCode(info).then((res) => {
+      this.movieService.getmovie(info).then((res) => {
+      //   if (res.message === 'recipe not found') {
+      //    alert(res.message)
+      //  } else
+         this.movieData = res;
+         console.log(res)
 
-      })
+     }
+   )
     }
     constructor(
       private movieService: app.Services.MovieService,
