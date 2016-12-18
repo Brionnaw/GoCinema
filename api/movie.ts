@@ -10,7 +10,7 @@ let Movie = mongoose.model('Movie', {
     movie:String,
   },
 });
-//Gracenote api
+//The Movie DB api
 router.post('/movie', function(req, res) {
   let newMovie = new Movie ({
       movie:req.body.movie,
@@ -28,7 +28,7 @@ router.post('/movie', function(req, res) {
   )
   });
 
-// api for local movie threatres:
+// Gracenote api for local movie threatres:
 // http://data.tmsapi.com/v1.1/movies/showings?startDate='+req.body.date+'&numDays=2&zip='+req.body.zipCode+'&units=mi&imageSize=Md&imageText=false&api_key=fr63fvhma63cuws5jkzy22eh'
 
 
