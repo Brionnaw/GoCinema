@@ -12,4 +12,21 @@
   style="background-color:purple; color:white;"
   ng-click="vm.search()">Find
 </button></p>
-{{vm.movieData.body}}
+
+<!-- result-->
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-11">
+  <span ng-show="vm.movieData">
+    {{vm.movieData["Title"]}}
+    {{vm.movieData["Year"]}}
+  <a ui-sref="movieInfo">
+      <img ng-src={{vm.movieData["Poster"]}}/>
+  </a>
+  </span>
+</div>
+</div>
+
+
+<!-- http://img.omdbapi.com/?i=tt2294629&apikey=fea60d10
+http://www.omdbapi.com/?t=lion+king&y=&plot=full&r=json&apikey=fea60d10 -->
