@@ -18,9 +18,9 @@ namespace app.Controllers {
    )
     }
     //webpage click //change to external href
-   public goToWebsite(movieId) {
+   public goToWebsite(imdbID) {
      console.log(this.$location.url)
-     this.$window.location.href = 'http://www.imdb.com/title/'+ movieId;
+     this.$window.location.href = 'http://www.imdb.com/title/'+ imdbID;
    }
     constructor(
       private movieService: app.Services.MovieService,

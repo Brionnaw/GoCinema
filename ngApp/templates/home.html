@@ -20,7 +20,7 @@
   <span ng-show="vm.movieData">
     {{vm.movieData["Title"]}}
     {{vm.movieData["Year"]}}
-  <a ui-sref="movieInfo">
+  <a ng-click=vm.goToWebsite(vm.movieData["imdbID"])>
       <img ng-src={{vm.movieData["Poster"]}}/>
   </a>
   </span>
