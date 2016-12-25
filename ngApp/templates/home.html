@@ -1,32 +1,47 @@
+<!-- title(desktop)-->
+<div class="row background">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <p class="text-center title">
+      <i class="fa fa-film"></i>Go Cinema</p>
+      <p class="text-center subTitle">
+        Search for the latest movies for free!
+      </p>
+
 
 <!-- search-->
-<p class="text-center">
-  <input
-  type="text"
-  placeholder="Enter movie"
-  ng-model="vm.movie">
-  <button
-  type="button"
-  name="button"
-  class="btn btn-sm"
-  style="background-color:purple; color:white;"
-  ng-click="vm.search()">Find
-</button></p>
-
-<!-- result-->
+<div class="searchBar">
+  <p class="text-center">
+    <input
+      type="text"
+      placeholder="Enter movie title"
+      ng-model="vm.movie">
+      <button
+        type="button"
+        name="button"
+        class="btn btn-sm"
+        style="background-color:red; color:white;"
+        ng-click="vm.search()">
+        Search Movie
+      </button>
+    </p>
+</div>
+<!-- movie result-->
 <div class="row">
-  <div class="col-xs-1"></div>
-  <div class="col-xs-11">
   <span ng-show="vm.movieData">
-    {{vm.movieData["Title"]}}
-    {{vm.movieData["Year"]}}
-  <a ng-click=vm.goToWebsite(vm.movieData["imdbID"])>
-      <img ng-src={{vm.movieData["Poster"]}}/>
-  </a>
-  </span>
+    <h1 class="text-center header">Results</h1>
+    <p class="text-center header2"> Showing results with "{{vm.movieData["Title"]}}"</p>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-11 col-sm-11 col-md-11">
+      <a ng-click=vm.goToWebsite(vm.movieData["imdbID"])>
+        <img ng-src={{vm.movieData["Poster"]}}/>
+      </a>
+      <br>
+      <!-- movie title-->
+      {{vm.movieData["Title"]}}
+      <br>
+      <!--movie year-->
+      {{vm.movieData["Year"]}}
+    </span>
+  </div>
+  </div>
 </div>
-</div>
-
-
-<!-- http://img.omdbapi.com/?i=tt2294629&apikey=fea60d10
-http://www.omdbapi.com/?t=lion+king&y=&plot=full&r=json&apikey=fea60d10 -->
