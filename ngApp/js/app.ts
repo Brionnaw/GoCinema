@@ -11,10 +11,10 @@ namespace app {
       templateUrl: '/templates/home.html',
       controller: app.Controllers.HomeController,
       controllerAs: 'vm'
-    }).state('movieInfo', {
-      url: '/movieInfo',
-      templateUrl: '/templates/movieInfo.html',
-      controller: app.Controllers.MovieInfoController,
+    }).state('Showtimes', {
+      url: '/showTtmes',
+      templateUrl: '/templates/showtimes.html',
+      controller: app.Controllers.ShowtimesController,
       controllerAs: 'vm'
        })
 

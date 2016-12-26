@@ -5,12 +5,14 @@ let mongoose = require('mongoose');
 let request = require('request');
 
 
-//model
+//Movie model
 let Movie = mongoose.model('Movie', {
   Movie:{
     movie:String,
   },
 });
+
+
 //The IMDb api
 router.post('/movie', function(req, res) {
   let newMovie = new Movie ({
@@ -28,6 +30,7 @@ router.post('/movie', function(req, res) {
     }
   })
 });
+
 
 
 

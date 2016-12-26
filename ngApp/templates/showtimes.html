@@ -1,0 +1,33 @@
+<!-- select movie info-->
+
+<!-- <span ng-show="vm.movieData">
+  {{vm.movieData["Title"]}}
+  {{vm.movieData["Year"]}}
+  <a ng-click="vm.goToWebsite(vm.movieData["Poster"].movieId)">
+    <img ng-src={{vm.movieData["Poster"]}}/>
+</a>
+
+</span> -->
+
+
+
+<!-- search-->
+
+  <p class="text-center">
+    <input
+      type="text"
+      placeholder="Enter date of movie"
+      ng-model="vm.date">
+      <input
+        type="text"
+        placeholder="Enter Zip code"
+        ng-model="vm.zipCode">
+      <button
+        type="button"
+        name="button"
+        class="btn btn-sm"
+        style="background-color:red; color:white;"
+        ng-click="vm.search()">
+        Search Showtimes
+      </button>
+    </p>

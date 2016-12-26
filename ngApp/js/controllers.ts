@@ -14,8 +14,7 @@ namespace app.Controllers {
         //  this.movieData = (JSON.parse(res))
         this.movieData = (data)
          console.log(data)
-     }
-   )
+     })
     }
     //webpage click //change to external href
    public goToWebsite(imdbID) {
@@ -30,16 +29,33 @@ namespace app.Controllers {
     }
   }
   //Movie Info  Controller
-  export class MovieInfoController {
-    public movieData;
+  export class ShowtimesController {
+    public zipCode;
+    public date;
+    public showtimesData;
+    public search(){
+       let info={
+         zipCode:this.zipCode,
+         date:this.date
+       }
+       console.log(info)
+       this.showtimesService.getTimes(info).then((info) => {
+         this.showtimesData = (info)
+          console.log(info)
 
-    constructor(){
+
+       })
+   }
+    constructor(
+      private showtimesService: app.Services.ShowtimesService,
+
+    ){
 
     }
 
 }
 
   angular.module('app').controller('HomeController', HomeController);
-  angular.module('app').controller('MovieInfoController', MovieInfoController);
+  angular.module('app').controller('ShowtimesController', ShowtimesController);
 
 }
