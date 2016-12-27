@@ -1,8 +1,10 @@
 <!-- title(desktop)-->
+
 <div class="row background">
   <div class="col-xs-12 col-sm-12 col-md-12">
+    <p class="text-center"><a ui-sref="Showtimes" class="showtimes"> Find movie show times in your local threatres</a></p>
     <p class="text-center title">
-      <i class="fa fa-film"></i>Go Cinema</p>
+      <i class="fa fa-film"></i> Go Cinema</p>
       <p class="text-center subTitle">
         Search for the latest movies for free!
       </p>
@@ -25,7 +27,40 @@
       </button>
     </p>
 </div>
-<a ui-sref="Showtimes"> Find movie show times in your local threatres</a>
+
+
+<!-- top rated movies-->
+<span ng-hide="vm.movieData">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12">
+  <p class="text-center header" >Top Rated Movies</p>
+  <p class="text-center header2"><b>Top four rated movies</p>
+</div>
+<div class="row topMovies">
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <a
+    href="http://www.imdb.com/title/tt0111161/">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg" alt="The Shawshank Redemption"></a>
+    <p> The Shawshank Redemption</p>
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <a href="http://www.imdb.com/title/tt0068646/">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTc0ZDk1YWItZDZiNi00NTdmLWE0MDctNTVhYTRhMDBmZjNjXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg" alt="The Godfather"></a>
+    <p>The Godfather</p>
+  </div>
+  <div class="col-xs-3 col-sm-3 col-md-3">
+    <a href="http://www.imdb.com/title/tt0071562/">
+      <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BOTE1MTBiYzYtMDI1OC00ZTUxLTg0ZWQtZjdjMzA0OTM1NGMwXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg" alt="The Godfather: Part II"></a>
+    <p>The Godfather: Part II</p>
+  </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <a href="http://www.imdb.com/title/tt0468569/">
+        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg" alt="The Dark Knight"></a>
+      <p>The Dark Knight</p>
+    </div>
+  </div>
+</div>
+</span>
 <!-- movie result-->
 <div class="row">
   <span ng-show="vm.movieData">

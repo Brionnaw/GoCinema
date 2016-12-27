@@ -8,20 +8,18 @@ namespace app.Services {
 
    constructor(
      $resource:ng.resource.IResourceService,
-     public $state:ng.ui.IStateService
    ){
        this.MovieResource = $resource('api/movie');
    }
  }
  export class ShowtimesService {
    public ShowtimeResource;
-   public getTimes(times){
-     console.log(times)
-     return this.ShowtimeResource.save(times).$promise
+   public getTimes(getInfo){
+     console.log(getInfo)
+     return this.ShowtimeResource.save(getInfo).$promise
    }
    constructor(
      $resource:ng.resource.IResourceService,
-     public $state:ng.ui.IStateService
    ){
        this.ShowtimeResource = $resource('api/showtimes');
    }

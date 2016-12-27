@@ -14,7 +14,6 @@ let Showtimes = mongoose.model('Showtimes', {
 });
 
 
-
 //The Gracenote api - movie showtimes
 router.post('/showtimes', function(req, res) {
   let newShowtimes = new Showtimes ({
@@ -23,7 +22,7 @@ router.post('/showtimes', function(req, res) {
   })
   request('http://data.tmsapi.com/v1.1/movies/showings?startDate='+req.body.date+'&numDays=2&zip='+req.body.zipCode+'&units=mi&imageSize=Md&imageText=false&api_key=fr63fvhma63cuws5jkzy22eh',
   function (error, response, body) {
-    let data = JSON.parse(body) // parse data
+    // let data = JSON.parse(body) // parse data
         console.log(body)
         if (!error && response.statusCode == 200) {
         res.send(body) // send the parse data to front end

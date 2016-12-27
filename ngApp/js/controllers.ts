@@ -2,7 +2,7 @@ namespace app.Controllers {
   export class HomeController {
     public movie;
     public movieData;
-    public search(){
+    public search() {
       let info = {
         movie:this.movie,
       }
@@ -33,27 +33,27 @@ namespace app.Controllers {
     public zipCode;
     public date;
     public showtimesData;
-    public search(){
-       let info={
-         zipCode:this.zipCode,
-         date:this.date
-       }
-       console.log(info)
-       this.showtimesService.getTimes(info).then((info) => {
-         this.showtimesData = (info)
-          console.log(info)
-
-
-       })
-   }
+    public search() {
+      let info = {
+        zipCode:this.zipCode,
+        date:this.date
+      }
+      console.log(info)
+      this.showtimesService.getTimes(info).then((res) => {
+      //   if (res.message === 'movie not found') {
+      //    alert(res.message)
+      //  } else
+        //  this.showtimesData = JSON.parse(res)
+        this.showtimesData = res
+         console.log(res)
+     })
+    }
     constructor(
       private showtimesService: app.Services.ShowtimesService,
 
-    ){
-
+    ) {
     }
-
-}
+  }
 
   angular.module('app').controller('HomeController', HomeController);
   angular.module('app').controller('ShowtimesController', ShowtimesController);

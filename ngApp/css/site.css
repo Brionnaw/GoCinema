@@ -14,7 +14,7 @@ img {
 
 .title {
   font-size:100px;
-  font-family:fruitopia;
+  font-family:slant;
   padding:55px 0px 0px 50px;
   color:black;
 }
@@ -25,15 +25,23 @@ img {
    text-align: center;
  }
  .subTitle {
-     font-size:34px;
+     font-size:18px;
      color:black;
      padding:0px 0px 0px 100px;
-     zoom:100%
+     zoom:100%;
+     font-family:zero hour;
 }
 .header{
   font-size: 50px;
-  font-family: phobo;
+  font-family:mayeka;
 }
-.header2{
+.header2 {
   font-size: 20px;
-  font-family: phobo;
+  font-family:mayeka;
+}
+
+.showtimes {
+  color:black;
+  text-decoration: none;
+  font-size: 18px;
+}
