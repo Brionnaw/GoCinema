@@ -8,15 +8,14 @@
       <p class="text-center subTitle">
         Search for the latest movies for free!
       </p>
-
-
-<!-- search-->
-<div class="searchBar">
-  <p class="text-center">
-    <input
-      type="text"
-      placeholder="Enter movie title"
-      ng-model="vm.movie">
+    </div>
+    <!-- search-->
+    <div class="searchBar">
+      <p class="text-center">
+        <input
+          type="text"
+          placeholder="Enter movie title"
+          ng-model="vm.movie">
       <button
         type="button"
         name="button"
@@ -26,18 +25,18 @@
         Search Movie
       </button>
     </p>
+  </div>
 </div>
-
 
 <!-- top rated movies-->
 <span ng-hide="vm.movieData">
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12">
-  <p class="text-center header" >Top Rated Movies</p>
-  <p class="text-center header2"><b>Top four rated movies</p>
-</div>
-<div class="row topMovies">
-  <div class="col-xs-3 col-sm-3 col-md-3">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <p class="text-center header" >Top Rated Movies</p>
+      <!-- <p class="text-center header2"><b>Top picks of rated movies</p> -->
+    </div>
+    <div class="row topMovies">
+      <div class="col-xs-3 col-sm-3 col-md-3">
     <a
     href="http://www.imdb.com/title/tt0111161/">
     <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg" alt="The Shawshank Redemption"></a>
@@ -59,25 +58,25 @@
       <p>The Dark Knight</p>
     </div>
   </div>
+  <p class="text-center"><a href="http://www.imdb.com/chart/top">View more top rated movies</a></p>
 </div>
 </span>
 <!-- movie result-->
-<div class="row">
+<div class="row results">
   <span ng-show="vm.movieData">
     <h1 class="text-center header">Results</h1>
     <p class="text-center header2"> Showing results with "{{vm.movieData["Title"]}}"</p>
     <div class="col-xs-1 col-sm-1 col-md-1"></div>
     <div class="col-xs-11 col-sm-11 col-md-11">
       <a ng-click=vm.goToWebsite(vm.movieData["imdbID"])>
-        <img ng-src={{vm.movieData["Poster"]}}/>
+        <img ng-src={{vm.movieData["Poster"]}} alt={{vm.movieData["Title"]}} >
       </a>
       <br>
       <!-- movie title-->
       {{vm.movieData["Title"]}}
       <br>
       <!--movie year-->
-      {{vm.movieData["Year"]}}
+      ({{vm.movieData["Year"]}})
     </span>
   </div>
   </div>
-</div>

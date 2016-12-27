@@ -7,13 +7,12 @@ namespace app.Controllers {
         movie:this.movie,
       }
       console.log(info)
-      this.movieService.getmovie(info).then((data) => {
-      //   if (res.message === 'movie not found') {
-      //    alert(res.message)
-      //  } else
-        //  this.movieData = (JSON.parse(res))
-        this.movieData = (data)
-         console.log(data)
+      this.movieService.getmovie(info).then((res) => {
+        if (res.message === 'movie not found') {
+         alert(res.message)
+       } else
+        this.movieData = (res)
+         console.log(res)
      })
     }
     //webpage click //change to external href
