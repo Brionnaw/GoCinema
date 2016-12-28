@@ -11,7 +11,7 @@ namespace app.Controllers {
         if (res.message === 'movie not found') {
          alert(res.message)
        } else
-        this.movieData = (res)
+        this.movieData = res
          console.log(res)
      })
     }
@@ -38,13 +38,13 @@ namespace app.Controllers {
         date:this.date
       }
       console.log(info)
-      this.showtimesService.getTimes(info).then((res) => {
+      this.showtimesService.getTimes(info).then((data) => {
       //   if (res.message === 'movie not found') {
       //    alert(res.message)
       //  } else
         //  this.showtimesData = JSON.parse(res)
-        this.showtimesData = res
-         console.log(res)
+        this.showtimesData = data
+         console.log(data)
      })
     }
     constructor(
