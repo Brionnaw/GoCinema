@@ -15,31 +15,32 @@ img {
 .title {
   font-size:100px;
   font-family:slant;
-  padding:55px 0px 0px 50px;
+  padding:30px 0px 0px 0px;
   color:black;
+}
+.subTitle {
+  font-size:30px;
+  color:black;
+  padding:0px 0px 50px 100px;
+  zoom:100%;
+  font-family:star avenue;
 }
 
 .searchBar {
-   padding: 30px 0px 100px 0px;
+   padding: 30px 0px 0px 0px;
    zoom: 150%;
    text-align: center;
- }
- .subTitle {
-     font-size:18px;
-     color:black;
-     padding:0px 0px 0px 100px;
-     zoom:100%;
-     font-family:zero hour;
 }
-.header{
+
+.header {
   font-size: 50px;
   font-family:mayeka;
 }
+
 .header2 {
   font-size: 20px;
   font-family:mayeka;
   padding-bottom: 30px;
-
 }
 
 .showtimes {
@@ -48,13 +49,11 @@ img {
   font-size: 18px;
 }
 
-
 .topMovies {
   text-align: center;
   padding: 0px 0px 10px 0px;
   font-size: 12px;
 }
-
 
 .footer {
   width:102.5%;
@@ -66,10 +65,11 @@ img {
   opacity: 0.8;
 }
 
-.results{
+.results {
   padding: 10px 0px 50px 10px;
 }
 
-&bigstar {
-  
+a {
+  cursor: pointer;
+  cursor: hand;
 }

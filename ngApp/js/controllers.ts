@@ -28,33 +28,33 @@ namespace app.Controllers {
     }
   }
   //Movie Info  Controller
-  export class ShowtimesController {
-    public zipCode;
-    public date;
-    public showtimesData;
-    public search() {
-      let info = {
-        zipCode:this.zipCode,
-        date:this.date
-      }
-      console.log(info)
-      this.showtimesService.getTimes(info).then((data) => {
-      //   if (res.message === 'movie not found') {
-      //    alert(res.message)
-      //  } else
-        //  this.showtimesData = JSON.parse(res)
-        this.showtimesData = data
-         console.log(data)
-     })
-    }
-    constructor(
-      private showtimesService: app.Services.ShowtimesService,
-
-    ) {
-    }
-  }
+  // export class ShowtimesController {
+  //   public zipCode;
+  //   public date;
+  //   public showtimesData;
+  //   public search() {
+  //     let info = {
+  //       zipCode:this.zipCode,
+  //       date:this.date
+  //     }
+  //     console.log(info)
+  //     this.showtimesService.getTimes(info).then((data) => {
+  //     //   if (res.message === 'movie not found') {
+  //     //    alert(res.message)
+  //     //  } else
+  //       //  this.showtimesData = JSON.parse(res)
+  //       this.showtimesData = JSON.parse(data)
+  //        console.log(data)
+  //    })
+  //   }
+  //   constructor(
+  //     private showtimesService: app.Services.ShowtimesService,
+  //
+  //   ) {
+  //   }
+  // }
 
   angular.module('app').controller('HomeController', HomeController);
-  angular.module('app').controller('ShowtimesController', ShowtimesController);
+  // angular.module('app').controller('ShowtimesController', ShowtimesController);
 
 }

@@ -1,9 +1,8 @@
 <!-- title(desktop)-->
-
 <div class="row background">
   <div class="col-xs-12 col-sm-12 col-md-12">
-    <p  style="padding-top:20px" class="text-center"><i style="font-size:30px"class="fa fa-ticket" aria-hidden="true"></i>
-      <a ui-sref="Showtimes" class="showtimes">Find movie show times in your local threatres</a></p>
+    <!-- <p  style="padding-top:20px" class="text-center"><i style="font-size:30px"class="fa fa-ticket" aria-hidden="true"></i> -->
+      <!-- <a ui-sref="Showtimes" class="showtimes">Find movie show times in your local threatres</a></p> -->
     <p class="text-center title">
       <i class="fa fa-film"></i> Go Cinema</p>
       <p class="text-center subTitle">
@@ -20,7 +19,7 @@
       <button
         type="button"
         name="button"
-        class="btn btn-sm"
+        class="button btn btn-sm"
         style="background-color:red; color:white;"
         ng-click="vm.search()">
         Search Movie
@@ -120,7 +119,7 @@
     <p>Rating: &bigstar; 8.8</p>
   </div>
 </div>
-  <p class="text-center"><a href="http://www.imdb.com/chart/top">View more top rated movies</a></p>
+  <p class="text-center"><a href="http://www.imdb.com/chart/top" class="btn btn-info"style="color:black">View more top rated movies</a></p>
 </span>
 <!-- movie result-->
 <div class="row results">
@@ -135,9 +134,10 @@
       <br>
       <!-- movie title-->
       {{vm.movieData["Title"]}}
-      <br>
       <!--movie year-->
       ({{vm.movieData["Year"]}})
+      <br>
+      Rating: &bigstar; {{vm.movieData["imdbRating"]}}
     </span>
   </div>
   </div>
