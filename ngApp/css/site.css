@@ -28,8 +28,11 @@ img {
 
 .searchBar {
    padding: 30px 0px 0px 0px;
-   zoom: 150%;
-   text-align: center;
+   zoom: 180%;
+}
+.search {
+  width:200px;
+  height:25px;
 }
 
 .header {
@@ -72,4 +75,69 @@ img {
 a {
   cursor: pointer;
   cursor: hand;
+}
+/*.button {
+  opacity: 0.9
+}*/
+
+
+/* For mobile phones: */
+@media only screen and (max-width: 667px),(max-width: 480px) {
+  [class*="col-xs"] {
+    width: 100%;
+  }
+  .background {
+    background-image: url('/images/Movie-Film.jpg');
+    width:104%;
+    height:550px;
+    opacity: 0.8;
+    background-repeat: no-repeat, repeat;
+    color:#000000;
+  }
+  .title {
+   font-size:60px;
+   font-family:slant;
+   padding:150px 0px 0px 0px;
+   color:black;
+ }
+
+ .subTitle {
+    font-size:17px;
+    color:black;
+    padding:0px 20px 0px 20px;
+    zoom:100%
+  }
+
+  .searchBar {
+    padding: 0px 0px 0px 5px;
+    text-align: center;
+    zoom:100%;
+  }
+  .header2 {
+    padding: 0px 5px 0px 5px;
+    font-size: 20px;
+    font-family: mayeka;
+  }
+  .header {
+    padding: 0px 5px 0px 5px;
+    font-size: 40px;
+    font-family: mayeka;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+  .btn {
+    zoom:150%;
+  }
+  .footer {
+   width:104%;
+   height:100%;
+   font-size:15px;
+   padding-top:40px;
+   color:white;
+   background-color: #47afdf;
+   opacity: 0.8;
+ }
 }
