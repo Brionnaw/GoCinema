@@ -1,4 +1,3 @@
-require('dotenv').config({ silent: true });
 import express = require('express');
 import favicon = require('serve-favicon');
 import logger = require('morgan');
@@ -7,14 +6,11 @@ import bodyParser = require('body-parser');
 const app = express();
 let mongoose = require('mongoose')
 
-// Datebase connection
-mongoose.connect('mongodb://localhost/gocinema');
-
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error'));
-db.once('open', () => {
-console.log('success database connection')
-  });
+// database connection
+let mongo_url = "mongodb://brionnaw:Brionna6@ds149268.mlab.com:49268/gocinema";
+mongoose.connect(mongo_url, () => {
+  console.log(`connected to ${mongo_url}`);
+});
 // view engine setup
 app.set('views', './views');
 app.engine('html', require('ejs').renderFile);

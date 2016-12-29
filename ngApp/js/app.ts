@@ -12,7 +12,7 @@ namespace app {
       controller: app.Controllers.HomeController,
       controllerAs: 'vm'
     }).state('Showtimes', {
-      url: '/showTtmes',
+      url: '/showTimes',
       templateUrl: '/templates/showtimes.html',
       controller: app.Controllers.ShowtimesController,
       controllerAs: 'vm'

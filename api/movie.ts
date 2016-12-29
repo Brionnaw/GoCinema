@@ -26,7 +26,7 @@ router.post('/movie', function(req, res) {
         res.send(data) // send the parse data to front end
       } else {
         console.log(error)
-      res.send(error)
+      res.send({message:"movie not found"})
     }
   })
 });
